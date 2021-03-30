@@ -11,13 +11,11 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class MyCatteryApplication {
-
-	Logger log = LoggerFactory.getLogger(MyCatteryApplication.class);
+	Logger LOGGER = LoggerFactory.getLogger(MyCatteryApplication.class);
 
 	public static void main(String[] args) {
 		SpringApplication.run(MyCatteryApplication.class, args);
 	}
-
 	@Bean
 	CommandLineRunner commandLineRunner(OwnerRepository ownerRepository,
 										CatInfoRepository catInfoRepository) {

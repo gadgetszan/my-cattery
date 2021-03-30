@@ -2,7 +2,7 @@ package com.gadgetszan.mycattery.controller;
 
 import com.gadgetszan.mycattery.exception.ResourceNotFoundException;
 import com.gadgetszan.mycattery.model.Owner;
-import com.gadgetszan.mycattery.service.OwnerService;
+import com.gadgetszan.mycattery.services.OwnerService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,13 +57,4 @@ public class OwnerController {
         response.put("deleted",Boolean.TRUE);
         return response;
     };
-
-    @GetMapping("test")
-    public void testLogging(){
-        System.out.println("Test Rest ");
-        LOGGER.info("Displaying in Console");
-        LOGGER.trace("Testing Trace");
-        LOGGER.warn("Testing logger in spring boot");
-        LOGGER.debug("Debug Log");
-    }
 }

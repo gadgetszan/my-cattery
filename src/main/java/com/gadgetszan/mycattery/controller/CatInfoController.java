@@ -2,7 +2,7 @@ package com.gadgetszan.mycattery.controller;
 
 import com.gadgetszan.mycattery.exception.ResourceNotFoundException;
 import com.gadgetszan.mycattery.model.CatInfo;
-import com.gadgetszan.mycattery.service.CatInfoService;
+import com.gadgetszan.mycattery.services.CatInfoService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/catinfo/{ownerId}")
+@RequestMapping("/api/catinfo")
 public class CatInfoController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CatInfoController.class);
@@ -23,7 +23,7 @@ public class CatInfoController {
     CatInfoService catInfoService;
 
     //create
-    @PostMapping("")
+    @PostMapping("/{ownerId}")
     public CatInfo createCatInfo(@PathVariable("ownerId") Long ownerId,
                                  @RequestBody CatInfo catInfo) throws ResourceNotFoundException {
         LOGGER.info("Controller: Creating Cat Info " + catInfo.toString());
@@ -45,8 +45,9 @@ public class CatInfoController {
     public List<CatInfo> getAllCatInfo(){
       return catInfoService.getAllCatInfo();
     };
+
     //getAllByOwner
-    @GetMapping("")
+    @GetMapping("/owner/{ownerId}")
     public List<CatInfo> getAllByOwner(@PathVariable("ownerId")
                                                    Long ownerId) throws ResourceNotFoundException{
         return catInfoService.getAllByOwner(ownerId);

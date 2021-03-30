@@ -1,10 +1,9 @@
-package com.gadgetszan.mycattery.service;
+package com.gadgetszan.mycattery.services;
 
 import com.gadgetszan.mycattery.exception.ResourceNotFoundException;
 import com.gadgetszan.mycattery.model.CatInfo;
 
 import java.util.List;
-import java.util.Map;
 
 public interface CatInfoService {
     List<CatInfo> getAllCatInfo();
