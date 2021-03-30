@@ -1,6 +1,5 @@
 package com.gadgetszan.mycattery.repository;
 
-import com.gadgetszan.mycattery.controller.CatInfoController;
 import com.gadgetszan.mycattery.model.Owner;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
