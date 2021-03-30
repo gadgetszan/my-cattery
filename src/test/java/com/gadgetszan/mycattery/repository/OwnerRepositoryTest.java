@@ -1,6 +1,7 @@
 package com.gadgetszan.mycattery.repository;
 
 import com.gadgetszan.mycattery.model.Owner;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,24 +19,22 @@ public class OwnerRepositoryTest {
     @Autowired
     private OwnerRepository underTest;
 
-    @Autowired
-    private CatInfoRepository underTest2;
+    @AfterEach
+    void tearDown(){
+        underTest.deleteAll();
+    }
 
     @Test
     void itShouldCheckCreatedOwner(){
         //given
-//        List<Owner> owners= underTest.findAll();
-//        int origSize = owners.size();
-//        LOGGER.info("Size after Adding is: " + origSize);
-//        System.out.println("Size before Adding is: " + origSize);
-
-        //when
         Owner owner = new Owner();
         owner.setFirstName("Rolan");
         owner.setLastName("Daniel");
         owner.setMiddleName("Caperina");
         owner.setAddress("Sta Rosa");
         owner.setContactNo("1234567");
+
+        //when
         underTest.save(owner);
         List<Owner> owners = underTest.findAll();
         int size = owners.size();
