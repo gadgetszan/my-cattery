@@ -4,6 +4,7 @@ import com.gadgetszan.mycattery.exception.ResourceNotFoundException;
 import com.gadgetszan.mycattery.model.Owner;
 import com.gadgetszan.mycattery.repository.OwnerRepository;
 import com.gadgetszan.mycattery.services.OwnerService;
+import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import java.util.List;
 
 @Service
 @Transactional
+@AllArgsConstructor
 public class OwnerServiceImpl implements OwnerService {
     private static final Logger LOGGER = LoggerFactory.getLogger(OwnerService.class);
 

@@ -28,11 +28,11 @@ public class OwnerRepositoryTest {
     void itShouldCheckCreatedOwner(){
         //given
         Owner owner = new Owner();
-        owner.setFirstName("Rolan");
-        owner.setLastName("Daniel");
-        owner.setMiddleName("Caperina");
-        owner.setAddress("Sta Rosa");
-        owner.setContactNo("1234567");
+        owner.setFirstName("TestFname");
+        owner.setLastName("TestLname");
+        owner.setMiddleName("TestMname");
+        owner.setAddress("TestAddress");
+        owner.setContactNo("testNumber");
 
         //when
         underTest.save(owner);
