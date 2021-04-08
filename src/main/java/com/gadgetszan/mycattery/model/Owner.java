@@ -12,6 +12,7 @@ import javax.persistence.*;
 @Entity(name ="Owner")
 @Table(name="owner")
 public class Owner {
+    //Test Changes
     @Id
     @SequenceGenerator(
             name="owner_sequence",
